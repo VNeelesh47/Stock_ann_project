@@ -1,0 +1,35 @@
+2026-04-18 20:22:46,352 | INFO     | main | ============================================================
+2026-04-18 20:22:46,353 | INFO     | main | Stock Market Price Prediction — ANN (Major Project)
+2026-04-18 20:22:46,353 | INFO     | main | Ticker: AAPL | Period: 5y | Window: 30
+2026-04-18 20:22:46,353 | INFO     | main | ============================================================
+2026-04-18 20:22:46,354 | INFO     | main | ============================================================
+2026-04-18 20:22:46,354 | INFO     | main | STEP 1: Fetching historical data for AAPL
+2026-04-18 20:22:46,354 | INFO     | utils.data_utils | Fetching data for AAPL | period=5y | interval=1d
+2026-04-18 20:22:50,684 | INFO     | utils.data_utils | Fetched 1207 rows with 19 features.
+2026-04-18 20:22:50,723 | INFO     | main | ============================================================
+2026-04-18 20:22:50,723 | INFO     | main | STEP 2: Preprocessing — window=30
+2026-04-18 20:22:50,732 | INFO     | utils.data_utils | Dataset split — Train: 851 | Val: 150 | Test: 176
+2026-04-18 20:22:50,733 | INFO     | main | Input dimension: 540
+2026-04-18 20:22:50,733 | INFO     | main | ============================================================
+2026-04-18 20:22:50,733 | INFO     | main | STEP 3: Building ANN — layers: [128, 64, 32]
+2026-04-18 20:22:51,224 | INFO     | models.ann_model | ANN architecture built successfully.
+2026-04-18 20:22:51,226 | INFO     | models.ann_model | None
+2026-04-18 20:22:51,226 | INFO     | main | ============================================================
+2026-04-18 20:22:51,226 | INFO     | main | STEP 4: Training ANN via backpropagation
+2026-04-18 20:22:51,226 | INFO     | models.ann_model | Starting ANN training with backpropagation...
+2026-04-18 20:23:41,179 | INFO     | models.ann_model | Training complete.
+2026-04-18 20:23:41,179 | INFO     | main | ============================================================
+2026-04-18 20:23:41,179 | INFO     | main | STEP 5: Evaluating on test set
+2026-04-18 20:23:41,400 | INFO     | models.ann_model | Evaluation Metrics: {'MAPE (%)': 4.2311, 'RMSE': 12.2066, 'MAE': 10.9336, 'Directional Accuracy (%)': 48.57}
+2026-04-18 20:23:41,464 | INFO     | main | ============================================================
+2026-04-18 20:23:41,464 | INFO     | main | STEP 6: Generating visualizations
+2026-04-18 20:23:42,001 | INFO     | utils.visualizer | Training history chart saved: e:\INTERNSHIP\Major project\Stock_ann_project\reports\AAPL\training_history.png
+2026-04-18 20:23:42,457 | INFO     | utils.visualizer | Prediction chart saved: e:\INTERNSHIP\Major project\Stock_ann_project\reports\AAPL\AAPL_predictions.png
+2026-04-18 20:23:42,636 | INFO     | utils.visualizer | Error distribution chart saved: e:\INTERNSHIP\Major project\Stock_ann_project\reports\AAPL\error_distribution.png
+2026-04-18 20:23:42,802 | INFO     | utils.visualizer | Scatter chart saved: e:\INTERNSHIP\Major project\Stock_ann_project\reports\AAPL\scatter_actual_vs_pred.png
+2026-04-18 20:23:42,802 | INFO     | main | ============================================================
+2026-04-18 20:23:42,802 | INFO     | main | STEP 7: Live snapshot prediction
+2026-04-18 20:23:42,802 | INFO     | utils.data_utils | Fetching live data for AAPL (last 60 days)...
+2026-04-18 20:23:43,306 | INFO     | utils.live_predictor | [LIVE] AAPL | Last Close: 270.2300 | Predicted: 278.9732 | Change: +3.235%
+2026-04-18 20:23:43,306 | INFO     | main | ============================================================
+2026-04-18 20:23:43,306 | INFO     | main | STEP 8: Generating HTML report

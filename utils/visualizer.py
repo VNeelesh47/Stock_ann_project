@@ -224,7 +224,7 @@ def generate_report(ticker: str, metrics: dict, config: dict,
 </style>
 </head>
 <body>
-<h1>📈 {ticker} — ANN Stock Price Prediction</h1>
+<h1>{ticker} — ANN Stock Price Prediction</h1>
 <p class="subtitle">Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} | 
    Model: Multi-layer Feedforward ANN (Backpropagation) | Data Source: yfinance</p>
 
