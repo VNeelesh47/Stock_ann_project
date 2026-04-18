@@ -151,18 +151,7 @@ def plot_scatter_actual_vs_pred(y_true: np.ndarray, y_pred: np.ndarray, save_dir
 
 def generate_report(ticker: str, metrics: dict, config: dict,
                     prediction_summary: dict, save_dir: str) -> str:
-    """
-    Generate a self-contained HTML performance report.
 
-    Args:
-        ticker             : Stock ticker symbol
-        metrics            : Evaluation metrics dict
-        config             : ANN hyperparameter config
-        prediction_summary : {'last_actual', 'last_predicted', 'next_predicted'}
-        save_dir           : Output directory
-    Returns:
-        Path to the HTML file
-    """
     def _metric_card(label, value, unit=""):
         color = STYLE["accent1"]
         if "MAPE" in label and isinstance(value, (int, float)):
@@ -224,8 +213,8 @@ def generate_report(ticker: str, metrics: dict, config: dict,
 </style>
 </head>
 <body>
-<h1>{ticker} — ANN Stock Price Prediction</h1>
-<p class="subtitle">Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} | 
+<h1>{ticker} -- ANN Stock Price Prediction</h1>
+<p class="subtitle">Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} |
    Model: Multi-layer Feedforward ANN (Backpropagation) | Data Source: yfinance</p>
 
 <h2>Performance Metrics</h2>
@@ -264,7 +253,7 @@ def generate_report(ticker: str, metrics: dict, config: dict,
 </html>"""
 
     report_path = os.path.join(save_dir, f"{ticker}_report.html")
-    with open(report_path, "w") as f:
+    with open(report_path, "w", encoding="utf-8") as f:
         f.write(html)
     logger.info("HTML report saved: %s", report_path)
     return report_path

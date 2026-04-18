@@ -74,7 +74,7 @@ class LivePredictor:
             "last_close":      round(last_close, 4),
             "predicted_price": round(y_price, 4),
             "change_pct":      round(change_pct, 3),
-            "direction":       "▲ UP" if change_pct >= 0 else "▼ DOWN",
+            "direction": "▲ UP" if change_pct >= 0 else "▼ DOWN",
         }
 
         self.latest_result = result
