@@ -423,10 +423,19 @@ def run_live_loop(args):
 
     try:
         if duration > 0:
-            time.sleep(duration)
-        else:
-            while True:
+            end_time = time.time() + duration
+            while time.time() < end_time:
                 time.sleep(1)
+                if not predictor._thread.is_alive():
+                    print("\n  ERROR: Prediction thread died unexpectedly.")
+                    break
+        else:
+            print("  Running... Press Ctrl+C to stop.\n")
+            while True:
+                time.sleep(5)
+                if predictor._thread and not predictor._thread.is_alive():
+                    print("\n  WARNING: Prediction thread stopped. Restarting...")
+                    predictor.start(interval_seconds=args.live_interval)
     except KeyboardInterrupt:
         print("\n  Stopped by user.")
     finally:
