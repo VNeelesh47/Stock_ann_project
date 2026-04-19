@@ -1,22 +1,6 @@
-# Stock Market Price Prediction Using ANN — Dependencies
-# Install with: pip install -r requirements.txt
-
-# Data
 yfinance>=0.2.36
 pandas>=2.0.0
 numpy>=1.24.0
-
-# Machine Learning
-tensorflow>=2.15.0          # includes Keras; or use torch variant below
+tensorflow>=2.15.0
 scikit-learn>=1.3.0
-
-# Visualization
 matplotlib>=3.7.0
-seaborn>=0.13.0
-
-# Utilities (included in stdlib, listed for clarity)
-# threading, logging, json, pickle, argparse — stdlib
-
-# Optional: PyTorch alternative (uncomment if using torch)
-# torch>=2.1.0
-# torchvision>=0.16.0
