@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pkl
+*.keras
+.env
+venv/
+env/
+logs/
+reports/
+models/saved/
+*.log
+.DS_Store
